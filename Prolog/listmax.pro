@@ -3,20 +3,16 @@ go:-
     createList(L),nl,
     write('The list is : '),
     printList(L),nl,
-    maxlist(L,M),
+    maxList(L,R),
     write('The maximum number in the list is : '),
-    write(M).
+    write(R).
 
-maxlist([X|T],M):-
-    maxlist2(T,X,M2),
-    M is X.
+    max(X,Y,Z) :- X =< Y , ! , Z = Y.
+    max(X,Y,X).
 
-maxlist2([],M,M1):-!.
-maxlist2([X|T],M,M1):-
-    X > M , M1 is X,
-    maxlist2(T,M1,M2);
-    maxlist2(T,M,M2).
-
+    maxList([H], H):-!.
+    maxList([X1,X2|T], R):- max(X1, X2, X),
+                            maxList([X|T], R). 
 
 enter(X):-
     write('Enter element:'),

@@ -11,4 +11,4 @@ createList(X,[X|T]):- enter(X1),createList(X1,T).
 
 reverse([],L,L).
 reverse([H|T1], L2,L):- 
-                                concat(T1,L2, [H|L] ).
+                                reverse(T1,L2, [H|L] ).

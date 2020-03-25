@@ -2,7 +2,8 @@ go:-	write('Enter first number :'),
 	read(X1),
 	write('Enter second number :'),
 	read(X2),
-	sum(X1,X2,R),nl,
-	write('Sum is : '),write(R).
+	max(X1,X2,R),nl,
+	write('Maximum is : '),write(R).
 
-sum(A,B,R) :- R is A+B.
+max(X,Y,Z) :-X =< Y,!,Z=Y.
+max(X,Y,X).

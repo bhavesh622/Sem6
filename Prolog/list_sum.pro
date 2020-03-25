@@ -4,10 +4,10 @@ go:-
     write('The list is : '),
     printList(L),nl,nl,
     write('Sum of the list is:'),
-    sum_list(L,R),
+    sum1_list(L,R),
     write(R).
 
-sum_list(L,R):-
+sum1_list(L,R):-
     sumlist(L,R1),
     R is 0 + R1.
 
